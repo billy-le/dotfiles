@@ -18,9 +18,6 @@ source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
-# Add Powerlevel10k
-zinit ice depth=1; zinit light romkatv/powerlevel10k
-
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
 zinit light-mode for \
@@ -31,13 +28,22 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
+# Add Powerlevel10k
+zinit ice depth=1; zinit light romkatv/powerlevel10k
+
 # Add zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
 
 # Load completions
 autoload -Uz compinit && compinit
+
+zinit cdreplay -q
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # History
 HISTSIZE=2000
@@ -55,10 +61,12 @@ setopt hist_find_no_dups
 # Completion styles
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-alias ls='ls -a --color'
+alias ls='ls --color'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# Shell integrations
+source <(fzf --zsh)
