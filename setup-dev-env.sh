@@ -65,6 +65,7 @@ casks=(
 	"vlc"
 	"obsidian"
 	"wezterm"
+	"duckduckgo"
 )
 
 # Loop over formulas and install them
