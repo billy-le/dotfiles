@@ -102,3 +102,11 @@ if ! grep -q 'NVM configuration' "$HOME/.zshrc"; then
 else
     echo "NVM lines already exist in .zshrc."
 fi
+
+## Install lastest Node version
+nvm install node
+
+## Install BUN
+curl -fsSL https://bun.sh/install | bash
+
+source "$HOME/.zshrc"
