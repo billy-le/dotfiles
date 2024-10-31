@@ -53,12 +53,14 @@ check_and_install() {
 
 # Core packages
 formulas=(
+    "bash"
     "fzf"
     "neovim"
     "git"
     "ripgrep"
     "wget"
     "tmux"
+    "tpm"
 )
 
 # Apps I use
