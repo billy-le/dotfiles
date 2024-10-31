@@ -177,9 +177,8 @@ return {
         -- https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        astro = {},
-        ts_ls = {},
         bashls = {},
+        biome = {},
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -194,6 +193,7 @@ return {
             },
           },
         },
+        tailwindcss = {},
       }
 
       -- Ensure the servers and tools above are installed

@@ -13,10 +13,7 @@ config.font = wezterm.font("Reddit Mono")
 config.font_size = 16
 
 -- Tab bar config
-config.hide_tab_bar_if_only_one_tab = false
-config.tab_bar_at_bottom = true
-config.use_fancy_tab_bar = false
-config.tab_and_split_indices_are_zero_based = true
+config.enable_tab_bar = false
 
 -- Hide title bar but allow resizing
 config.window_decorations = "RESIZE"
@@ -27,5 +24,11 @@ config.webgpu_power_preference = "LowPower"
 
 config.window_background_opacity = 0.9
 config.macos_window_background_blur = 12
+config.window_padding = {
+	left = 5,
+	right = 5,
+	top = 0,
+	bottom = 0,
+}
 
 return config
