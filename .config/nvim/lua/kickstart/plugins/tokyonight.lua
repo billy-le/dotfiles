@@ -16,6 +16,10 @@ return {
     end,
     opts = {
       transparent = true,
+      styles = {
+        sidebars = 'transparent',
+        floats = 'transparent',
+      },
     },
   },
 }
