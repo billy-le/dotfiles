@@ -1,18 +1,18 @@
 local wezterm = require("wezterm")
 local mux = wezterm.mux
 
-wezterm.on("gui-startup", function()
-	local _, _, window = mux.spawn_window({})
-	window:gui_window():maximize()
-end)
-local config = {}
-
 -- In newer versions of wezterm, use the config_builder which will
 -- help provide clearer error messages
 if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
+wezterm.on("gui-startup", function()
+	local _, _, window = mux.spawn_window({})
+	window:gui_window():maximize()
+end)
+
+-- config.default_prog = { "/opt/homebrew/bin/tmux", "new-session", "-A", "-s", "default" }
 config.color_scheme = "Tokyo Night (Gogh)"
 config.font = wezterm.font("Reddit Mono")
 config.font_size = 16
@@ -35,7 +35,8 @@ config.window_padding = {
 	top = 0,
 	bottom = 0,
 }
-
+config.animation_fps = 120
+config.max_fps = 120
 config.automatically_reload_config = true
 
 return config
