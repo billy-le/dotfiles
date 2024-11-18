@@ -179,7 +179,6 @@ return {
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         astro = {},
         bashls = {},
-        biome = {},
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -194,6 +193,7 @@ return {
             },
           },
         },
+        prettierd = {},
         tailwindcss = {},
         ts_ls = {},
       }

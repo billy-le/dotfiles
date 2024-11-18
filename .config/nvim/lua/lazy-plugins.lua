@@ -40,6 +40,8 @@ require('lazy').setup({
 
   require 'kickstart/plugins/mini',
 
+  { 'virchau13/tree-sitter-astro' },
+
   require 'kickstart/plugins/treesitter',
 
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the

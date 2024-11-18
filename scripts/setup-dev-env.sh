@@ -68,6 +68,11 @@ formulas=(
   "wget"
   "tmux"
   "tpm"
+  "eza"
+
+  # linters / formatters
+  "fsouza/prettierd/prettierd"
+  "biome"
 )
 
 # Apps I use
@@ -118,10 +123,10 @@ else
   echo "NVM lines already exist in .zshrc."
 fi
 
-## Install lastest Node version
+# Install lastest Node version
 nvm install node
 
-## Install BUN
+# Install BUN
 curl -fsSL https://bun.sh/install | bash
 
 source "$HOME/.zshrc"
