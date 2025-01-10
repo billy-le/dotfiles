@@ -69,10 +69,20 @@ formulas=(
   "tmux"
   "tpm"
   "eza"
+  "mise"
+  "openssl@3"
+  "readline"
+  "libyaml"
+  "gmp"
+  "autoconf"
+  "supabase/tap/supabase"
 
   # linters / formatters
   "fsouza/prettierd/prettierd"
   "biome"
+
+  # mobile development
+  "watchman"
 )
 
 # Apps I use
@@ -85,6 +95,7 @@ casks=(
   "obs"
   "docker"
   "protonvpn"
+  "android-studio"
 )
 
 # Loop over formulas and install them
@@ -99,34 +110,8 @@ for cask in "${casks[@]}"; do
   check_and_install "$cask" "--cask"
 done
 
-# Install Node Version Manager
-export NVM_DIR="$HOME/.nvm"
-(
-  git clone https://github.com/nvm-sh/nvm.git "$NVM_DIR" \
-    && cd "$NVM_DIR" \
-    && git checkout "$(git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1))"
-)
-
-# Add NVM to .zshrc and load NVM
-NVM_LINES='
-# NVM configuration
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-'
-
-if ! grep -q 'NVM configuration' "$HOME/.zshrc"; then
-  echo "$NVM_LINES" >>"$HOME/.zshrc"
-  echo "NVM lines added to .zshrc."
-  source "$HOME/.zshrc"
-else
-  echo "NVM lines already exist in .zshrc."
-fi
-
-# Install lastest Node version
-nvm install node
-
-# Install BUN
-curl -fsSL https://bun.sh/install | bash
-
 source "$HOME/.zshrc"
+
+mise use -g bun
+mise use -g node
+mise use -g java@temurin

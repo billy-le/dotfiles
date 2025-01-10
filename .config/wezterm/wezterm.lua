@@ -27,8 +27,8 @@ config.window_decorations = "RESIZE"
 config.front_end = "WebGpu"
 config.webgpu_power_preference = "LowPower"
 
-config.window_background_opacity = 0.9
-config.macos_window_background_blur = 12
+config.window_background_opacity = 0.8
+config.macos_window_background_blur = 4
 config.window_padding = {
 	left = 5,
 	right = 5,

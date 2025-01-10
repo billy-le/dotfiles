@@ -3,3 +3,6 @@
 # Please adapt and uncomment the following lines:
 	name = Billy Le
 	email = hi@billyle.dev
+
+[init]
+	defaultBranch = main
