@@ -96,6 +96,8 @@ casks=(
   "docker"
   "protonvpn"
   "android-studio"
+  "tableplus"
+  "pgadmin4"
 )
 
 # Loop over formulas and install them

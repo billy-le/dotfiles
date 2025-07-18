@@ -43,6 +43,7 @@ return {
         markdown = { 'prettierd' },
         typescript = { 'prettierd' },
         sh = { 'shfmt' },
+        css = { 'prettierd' },
       },
       formatters = {
         shfmt = { prepend_args = { '-i', '2', '-ci', '-bn' } },

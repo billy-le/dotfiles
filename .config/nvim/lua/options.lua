@@ -70,3 +70,6 @@ vim.opt.scrolloff = 10
 
 -- enable 24-bit color
 vim.opt.termguicolors = true
+
+--- views can only be fully collapsed with the global statusline
+vim.opt.laststatus = 3

@@ -5,4 +5,5 @@
 return {
   require 'custom.plugins.bufferline',
   require 'custom.plugins.trouble',
+  require 'custom.plugins.avante',
 }
