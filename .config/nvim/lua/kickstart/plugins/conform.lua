@@ -44,6 +44,7 @@ return {
         typescript = { 'prettierd' },
         sh = { 'shfmt' },
         css = { 'prettierd' },
+        sql = { 'sleek' },
       },
       formatters = {
         shfmt = { prepend_args = { '-i', '2', '-ci', '-bn' } },

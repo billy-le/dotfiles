@@ -117,3 +117,4 @@ source "$HOME/.zshrc"
 mise use -g bun
 mise use -g node
 mise use -g java@temurin
+mise use -g rust
